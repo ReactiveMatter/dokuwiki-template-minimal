@@ -645,12 +645,26 @@ navbar .right-column .options
     flex-direction: column;
     padding-top: 8px;
     padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
     gap: 16px;
 }
 
-#view>.site-header 
+#view>.site-header
 {
     padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.site-header .site-header-content
+{
+    padding: 8px 0px;
+}
+
+#view>.site-header .site-header-content
+{
+    padding: 0px;
 }
 
 .site-navigation
@@ -671,6 +685,11 @@ footer
 {
     padding: 16px;
     border-top: 1px solid __border__;
+}
+
+#view>footer 
+{
+    padding-bottom: 0px;
 }
 
 
