@@ -647,7 +647,7 @@ navbar .right-column .options
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    gap: 16px;
+    gap: 8px;
 }
 
 #view>.site-header
