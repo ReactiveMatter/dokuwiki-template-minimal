@@ -1,5 +1,5 @@
 // template-related scripts go here...
-jQuery('body').on('click', function(e) {
+jQuery(document).on('click', function(e) {
     if (!jQuery(e.target).closest('.menu').length) {
         jQuery('.menu:not(.mobile-menu) .list').hide();
     }
@@ -23,14 +23,14 @@ jQuery("#showhidesidemenu").on("click", () => {
         //Open sidebar menu
         jQuery("#navbar .right-column").css("display","none");
         jQuery("#sidebar").css("display","flex");
-        jQuery("#view").css("display","none");
+        jQuery("#view, .site-header, #footer").css("display","none");
     }
     else
     {
         //Close sidebar menu
         jQuery("#navbar .right-column").css("display","none");
         jQuery("#sidebar").css("display","none");
-        jQuery("#view").css("display","flex");
+        jQuery("#view, .site-header, #footer").css("display","flex");
     }
 
 
