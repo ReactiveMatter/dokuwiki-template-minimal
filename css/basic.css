@@ -620,11 +620,7 @@ navbar .right-column .options
 }
 
 
-.site-header 
-{
-    padding: 8px 16px;
-    border-bottom: 1px solid __border__;
-}
+
 
 #view>*
 {
@@ -638,22 +634,31 @@ navbar .right-column .options
     padding-bottom: 16px;
 }
 
+.site-header 
+{
+    border-bottom: 1px solid __border__;
+}
+
 .site-header, .site-navigation,
 {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 8px;
+}
+
+
+
+.site-header-content>*:last-child, footer>*:last-child
+{
+    margin-bottom: 0px;
 }
 
 footer 
 {
     padding: 16px;
     border-top: 1px solid __border__;
-}
-
-.site-header-content>*:last-child, footer>*:last-child
-{
-    margin-bottom: 0px;
 }
 
 
