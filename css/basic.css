@@ -660,6 +660,7 @@ article#content
 article#content h1
 {
     font-size: 2em;
+    margin-top: 0.5em;
 }
 article#content h2
 {
