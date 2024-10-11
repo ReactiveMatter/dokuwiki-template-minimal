@@ -632,6 +632,12 @@ navbar .right-column .options
     padding-right: 0px;
 }
 
+#view, #sidebar 
+{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 .site-header, .site-navigation,
 {
     display: flex;
@@ -653,10 +659,7 @@ footer
 
 article#content
 {
-    flex-grow: 1;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    
+    flex-grow: 1;    
 }
 
 article#content h1
