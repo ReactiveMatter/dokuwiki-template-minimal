@@ -836,6 +836,8 @@ ul.actions, .dokuwiki .editBar .editButtons
     padding-top: 24px;
     padding-bottom: 24px;
     border-right: 1px solid __border__;
+    flex-shrink:0;
+    flex-grow: 0;
 }
 
 #content
