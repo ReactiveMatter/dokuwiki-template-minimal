@@ -122,4 +122,11 @@
         padding: 0px;
      }
 
+     .dokuwiki .wrap_box.wrap_side.wrap_big, .dokuwiki .wrap_box.wrap_side
+     {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+     }
+
 }

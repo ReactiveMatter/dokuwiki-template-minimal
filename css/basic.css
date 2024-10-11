@@ -487,6 +487,7 @@ option {
 
 .left-column {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 16px;
     padding: 8px 16px;
@@ -494,6 +495,7 @@ option {
 
 .right-column {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
     gap: 16px;
@@ -818,6 +820,7 @@ ul.actions, .dokuwiki .editBar .editButtons
 {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 #wiki__editbar
 {
@@ -907,4 +910,9 @@ ul.actions, .dokuwiki .editBar .editButtons
 .dokuwiki #config__manager table.inline tr:hover td
 {
      background-color: __background__;
+}
+
+pre.code 
+{
+    padding: 0.5em 1em;
 }
