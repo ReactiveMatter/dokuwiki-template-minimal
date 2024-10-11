@@ -654,13 +654,14 @@ footer
 article#content
 {
     flex-grow: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
     
 }
 
 article#content h1
 {
     font-size: 2em;
-    margin-top: 0.5em;
 }
 article#content h2
 {
