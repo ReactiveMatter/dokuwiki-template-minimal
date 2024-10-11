@@ -1,0 +1,910 @@
+/**
+ * This file provides the most basic styles.
+ *
+ * If you integrate DokuWiki into another project, you might either
+ * want to integrate this file into the other project as well, or use
+ * the other project's basic CSS for DokuWiki instead of this one.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ */
+
+html {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+html,
+body {
+    background-color: __background__;
+    color: __text__;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+body:not(.full-width)
+{
+    max-width: __site_width__;
+    margin: auto;
+}
+
+body * 
+{
+    box-sizing: border-box;
+}
+
+.hide 
+{
+    display: none;
+}
+
+/*____________ headers ____________*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    color: __text_neu__;
+    background-color: inherit;
+    padding: 0;
+    line-height: 1.2;
+    clear: left; /* ideally 'both', but problems with toc */
+}
+[dir=rtl] h1,
+[dir=rtl] h2,
+[dir=rtl] h3,
+[dir=rtl] h4,
+[dir=rtl] h5,
+[dir=rtl] h6 {
+    clear: right;
+}
+
+h1 {
+    font-size: 2.25em;
+    margin: 0 0 0.444em;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0 0 0.666em;
+}
+h3 {
+    font-size: 1.125em;
+    margin: 0 0 0.888em;
+}
+h4 {
+    font-size: 1em;
+    margin: 0 0 1.0em;
+}
+h5 {
+    font-size: .875em;
+    margin: 0 0 1.1428em;
+}
+h6 {
+    font-size: .75em;
+    margin: 0 0 1.333em;
+}
+/* bottom margin = 1 / font-size */
+
+caption,
+figcaption,
+summary,
+legend {
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0 0 .35em;
+}
+
+
+/*____________ basic margins and paddings ____________*/
+
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+hr,
+blockquote,
+figure,
+details,
+fieldset,
+address {
+    margin: 0 0 1.4em 0; /* bottom margin = line-height */
+    padding: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*____________ lists ____________*/
+
+ul,
+ol {
+    padding: 0 0 0 1.5em;
+}
+[dir=rtl] ul,
+[dir=rtl] ol {
+    padding: 0 1.5em 0 0;
+}
+
+li,
+dd {
+    padding: 0;
+    margin: 0 0 0 1.5em;
+}
+[dir=rtl] li,
+[dir=rtl] dd {
+    margin: 0 1.5em 0 0;
+}
+
+dt {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+li ul,
+li ol,
+li dl,
+dl ul,
+dl ol,
+dl dl {
+    margin-bottom: 0;
+    padding: 0;
+}
+li li {
+    font-size: 100%;
+}
+
+ul {
+    list-style: disc outside;
+}
+ol {
+    list-style: decimal outside;
+}
+ol ol {
+    list-style-type: lower-alpha;
+}
+ol ol ol {
+    list-style-type: upper-roman;
+}
+ol ol ol ol {
+    list-style-type: upper-alpha;
+}
+ol ol ol ol ol {
+    list-style-type: lower-roman;
+}
+
+
+/*____________ tables ____________*/
+
+table {
+    border-collapse: collapse;
+    empty-cells: show;
+    border-spacing: 0;
+    border: 1px solid __border__;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+}
+[dir=rtl] caption {
+    text-align: right;
+}
+
+th,
+td {
+    padding: .3em .5em;
+    margin: 0;
+    vertical-align: top;
+    border: 1px solid __border__;
+}
+th {
+    font-weight: bold;
+    background-color: __background_alt__;
+    color: inherit;
+    text-align: left;
+}
+[dir=rtl] th {
+    text-align: right;
+}
+
+
+/*____________ links ____________*/
+
+a {
+}
+a:link,
+a:visited {
+    text-decoration: none;
+    color: __link__;
+}
+
+a:visited:hover,
+a:link:focus,
+a:visited:focus,
+a:link:active,
+a:visited:active {
+    text-decoration: none;
+}
+
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+
+/*____________ misc ____________*/
+
+img,
+svg {
+    border-width: 0;
+    vertical-align: middle;
+    color: #666;
+    background-color: transparent;
+    font-style: italic;
+}
+
+img,
+svg,
+object,
+embed,
+iframe,
+video,
+audio {
+    max-width: 100%;
+}
+
+img,
+svg,
+video {
+    height: auto;
+}
+
+iframe {
+    border-width: 0;
+    background-color: inherit;
+}
+
+button img,
+button svg {
+    max-width: none;
+}
+
+hr {
+    border-style: solid;
+    border-width: 1px 0 0;
+    text-align: center;
+    height: 0;
+    width: 100%;
+    clear: both;
+}
+
+acronym,
+abbr {
+    font-style: normal;
+}
+acronym[title],
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted;
+    text-decoration: none;
+}
+em acronym,
+em abbr {
+    font-style: italic;
+}
+
+mark {
+    background: __highlight__;
+    color: inherit;
+}
+
+pre,
+code,
+samp,
+kbd {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
+    /* same font stack should be used for ".dokuwiki table.diff td" in _diff.css */
+    font-size: 1em;
+    background-color: __background_alt__;
+    color: __text__;
+    direction: ltr;
+    text-align: left;
+}
+pre {
+    border: 1px solid __border__;
+    padding: 0 .2em;
+    overflow: auto;
+    word-wrap: normal;
+}
+
+blockquote {
+    padding: 0 .5em;
+    border: solid __border__;
+    border-width: 0 0 0 .25em;
+}
+[dir=rtl] blockquote {
+    border-width: 0 .25em 0 0;
+}
+q:before,
+q:after {
+    content: '';
+}
+
+sub,
+sup {
+    font-size: .8em;
+    line-height: 1;
+}
+sub {
+    vertical-align: sub;
+}
+sup {
+    vertical-align: super;
+}
+
+small {
+    font-size: .8em;
+}
+
+wbr {
+    display: inline-block;
+}
+
+/*____________ forms ____________*/
+
+form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    padding: .7em 1em 0;
+    padding: .7rem 1rem; /* for those browsers understanding :last-child */
+    border: 1px solid #999;
+}
+fieldset > :last-child {
+    margin-bottom: 0;
+}
+legend {
+    padding: 0 .1em;
+}
+
+label {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input,
+textarea,
+button,
+select,
+optgroup,
+option,
+keygen,
+output,
+meter,
+progress {
+    font: inherit;
+    color: inherit;
+    /* background-color destroys button look */
+    line-height: normal;
+    margin: 0;
+    vertical-align: middle;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input,
+button,
+select,
+keygen,
+textarea {
+    padding: .1em;
+}
+input[type=radio],
+input[type=checkbox],
+input[type=image],
+input.check {
+    padding: 0;
+}
+
+input[type=submit],
+input[type=button],
+input[type=reset],
+input.button,
+button {
+    cursor: pointer;
+    overflow: visible;
+    padding: .1em .4em;
+}
+
+input[disabled],
+button[disabled],
+select[disabled],
+textarea[disabled],
+option[disabled],
+input[readonly],
+button[readonly],
+select[readonly],
+textarea[readonly] {
+    cursor: auto;
+    opacity: .5;
+}
+
+input:focus,
+button:focus,
+select:focus,
+keygen:focus,
+textarea:focus {
+    box-shadow: 0 0 5px #999;
+    outline: 0;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+select {
+    max-width: 100%;
+}
+optgroup {
+    font-style: italic;
+    font-weight: bold;
+}
+option {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.hide 
+{
+    display: none;
+}
+
+.flex-fill
+{
+    flex-grow: 1;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 16px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    padding: 8px 16px;
+}
+
+
+
+navbar 
+{
+    display: flex;
+    border-bottom: 1px solid __border__;
+}
+
+navbar .site-name
+{
+    display: flex;
+    gap: 16px;
+}
+
+
+navbar .site-name .site-logo
+{
+    width: 24px;
+    height: 24px;
+}
+navbar .site-name .site-title
+{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+navbar a.site-name, navbar a.site-name:hover 
+{
+    color: __title_color__;
+    text-decoration: none;
+}
+
+navbar form.search button {
+    background-color: transparent;
+    background-image: url("images/search.svg");
+    border-width: 0;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 14px;
+    text-indent: -99999px;
+    margin-left: -20px;
+    box-shadow: none;
+    padding: 0;
+    position: relative;
+    top:0px;
+    right: 5px;
+    opacity: 0.5;
+}
+
+navbar form.search input
+{
+    padding: 0.5em 1em;
+    padding-right: 2em;
+    width: 20rem;
+    border: 1px solid __border__;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+navbar form.search input:focus 
+{
+    box-shadow: none;
+}
+
+#navbar .left-column
+{
+    flex-direction: row;
+    align-items: center;
+}
+#navbar .right-column {
+    border: none;
+    flex-direction: row-reverse;
+    gap: 16px;
+    align-items: center;
+}
+
+#qsearch__out 
+{
+    display: none;
+    padding: 0.5em 1em;
+    width: 20rem;
+    left: unset;
+    top: unset;
+}
+
+#qsearch__out>strong
+{
+    color: __text_alt__;
+    margin-bottom: 1em;
+}
+#qsearch__out ul, #qsearch__out ol, #qsearch__out li
+{
+    margin: 0px;
+}
+
+#qsearch__out li
+{
+    margin: 4px 0px;
+}
+
+navbar .right-column .options
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#main 
+{
+    display: flex;
+    flex-grow: 1;
+}
+
+.page-info
+{
+    padding: 16px;
+}
+
+
+.site-header 
+{
+    padding: 8px 16px;
+    border-bottom: 1px solid __border__;
+}
+
+.site-header, .site-navigation,
+{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+
+footer 
+{
+    padding: 16px;
+    border-top: 1px solid __border__;
+}
+
+.site-header-content>*:last-child, footer>*:last-child
+{
+    margin-bottom: 0px;
+}
+
+
+article#content
+{
+    flex-grow: 1;
+    padding: 16px;
+}
+
+article#content h1
+{
+    font-size: 2em;
+}
+article#content h2
+{
+    font-size: 1.5em;
+}
+
+article#content h3
+{
+    font-size: 1.25em;
+}
+
+article#content h4
+{
+    font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    color: __text__;
+}
+
+.menu 
+{
+    position: relative;
+    cursor: pointer;
+}
+
+
+.menu .list 
+{
+    display: none;
+    position: absolute;
+    right: 0px;
+    background-color: __background__;
+    border: 1px solid __border__;
+    min-width: 200px;
+    padding: 8px 0px;
+    top: 44px;
+    z-index: 20000;
+    border-radius: 3px;
+}
+.menu .list li 
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu .list li>a
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: __text__ ;
+    padding: 4px 16px ;
+}
+.menu .list li>a:hover
+{
+    background-color: __background_alt__;
+}
+.menu .list li>a svg 
+{
+    fill: __text_alt__;
+}
+
+.menu .list .user-name 
+{
+    padding: 8px 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu .button
+{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: __text_alt__;
+}
+
+.menu .button:hover 
+{
+    color: __text__;
+}
+
+.user-menu .button::before {
+    mask-image: url('images/user-circle.svg');
+}
+
+.page-menu .button::before{
+    mask-image: url('images/document-text.svg');
+}
+
+.site-menu .button::before{
+    mask-image: url('images/server.svg');
+}
+
+#showhidesidemenu .button::before
+{
+    mask-image: url('images/menu.svg');
+}
+
+#showhideappoptions .button::before
+{
+    mask-image: url('images/three-dots-vertical.svg');
+}
+
+
+.menu .button::before, .mobile.icon .button::before
+{
+    display: block;
+    content: "";
+    background-size: 1em;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    height: 1.2em;
+    width: 1.2em;
+    opacity: 0.9;
+    background: __text_alt__;
+}
+
+.menu .button:hover::before 
+{
+    opacity: 1;
+}
+
+
+
+.options
+{
+    display: flex;
+    gap: 16px;
+}
+
+
+navbar .options
+{
+    gap: 0px;
+}
+
+navbar .options .menu 
+{
+    padding: 8px;
+}
+
+.mobile.icon
+{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu
+{
+    display: none;
+}
+
+/* Correcting Dokuwiki defaults */
+ul.actions, .dokuwiki .editBar .editButtons
+{
+    display: flex;
+    gap: 10px;
+}
+#wiki__editbar
+{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#sidebar 
+{
+    width: __sidebar_width__;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-right: 1px solid __border__;
+}
+
+#content
+{
+    position: relative;
+}
+
+#dw__toc
+{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0px;
+    width: 15em;
+}
+
+#dw__toc>div
+{
+    background-color: __background__;
+    border: 1px solid __border__;
+    border-radius: 3px;
+    margin-top: 28px;
+    width: 100%;
+    padding: 0.5em 1em;
+}
+
+#content #dw__toc .toggle::before
+{
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: __text_alt__;
+    mask: url('images/bullets.svg');
+    mask-size: contain;
+    cursor: pointer;
+    opacity: 0.7;
+    position: absolute;
+    right: 0px;
+}
+
+#content #dw__toc .toggle
+{
+    height: 0px;
+    overflow: hidden;
+}
+
+#dw__toc
+{
+    display: none;
+}
+
+#config__manager fieldset, #config__manager tr.default .input, #config__manager .value input,
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault
+{
+    background: none;
+}
+
+#config__manager .value input, #config__manager .value select,  #config__manager .value textarea
+{
+    border: 1px solid __border__;
+    padding: 0.5em 1em;
+
+}
+#config__manager .value input:focus, #config__manager .value select:focus, #config__manager .value textarea:focus
+{
+     border: 1px solid #00b7ff;
+     background-color: __background__;
+     box-shadow: none;
+}
+
+.dokuwiki #config__manager table.inline tr:hover td
+{
+     background-color: __background__;
+}

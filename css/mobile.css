@@ -1,0 +1,125 @@
+/*For mobile */
+@media screen and (max-width: __mobile_breakpoint__) {
+    #view.right-column {
+        padding: 16px;
+    }
+    #main .container {
+        flex-direction: column;
+    }
+
+    #main .left-column {
+        width: 100%;
+        display: none;
+    }
+
+    #main .right-column {
+        width: 100%;
+    }
+
+    #navbar .left-column {
+        flex-grow: 1;
+    }
+    #navbar .right-column {
+        width: 100%;
+        padding: 20px;
+    }
+    .fir-input-group {
+        min-width: 100%;
+    }
+
+    .fir-results .table {
+        min-width: 800px;
+    }
+
+    .table-responsive table {
+        min-width: 800px;
+    }
+
+    #navbar .left-column a.site-name
+    {
+        margin: auto;
+    }
+
+    /*Nav bar for mobile */
+    .mobile.icon {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+    }
+
+
+    #sidebar {
+        width: 100%;
+        display: none;
+    }
+
+    #navbar .right-column {
+        background: rgb(255, 255, 255);
+        position: absolute;
+        flex-direction: column-reverse;
+        right: 0px;
+        z-index: 1099;
+        align-items: baseline;
+        width: 100%;
+        top: 60px;
+        display: none;
+    }
+
+    #navbar .right-column .icon, #navbar .right-column a.navitem
+    {
+        display: flex;
+        gap: 16px;
+    }
+
+    #navbar .right-column .icon.dropdown-toggle::after
+    {
+        align-self: center;
+    }
+
+    #qsearch__in, .search, #qsearch__out
+    {
+        width: 100%;
+    }
+
+    navbar .right-column .options
+    {
+        flex-direction: column;
+    }
+
+    navbar .right-column .menu:not(.mobile-menu)
+    {
+        display: none;
+    }
+
+     navbar .right-column .mobile-menu.menu, .mobile-menu.menu .list
+     {
+        display: block;
+     }
+     navbar .right-column .options
+     {
+        width: 100%;
+     }
+     
+     navbar .right-column .mobile-menu
+     {
+        padding: 0px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+     }
+
+     .mobile-menu.menu .list
+     {
+        position: relative;
+        top: 0px;
+        border: none;
+        z-index: 1;
+
+     }
+
+     #view.right-column
+     {
+        padding: 0px;
+     }
+
+}
