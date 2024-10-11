@@ -45,14 +45,14 @@ jQuery("#showhideappoptions").on("click", () => {
         //Open
         jQuery("#navbar .right-column").css("display","flex");
         jQuery("#sidebar").css("display","none");
-        jQuery("#view").css("display","none");
+        jQuery("#view, .site-header, #footer").css("display","none");
     }
     else
     {
         //Close
         jQuery("#navbar .right-column").css("display","none");
         jQuery("#sidebar").css("display","none");
-        jQuery("#view").css("display","flex");
+        jQuery("#view, .site-header, #footer").css("display","flex");
     }
     
 });

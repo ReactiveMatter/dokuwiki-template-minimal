@@ -46,7 +46,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <div class="options">
             <?php if(sizeof((new \dokuwiki\Menu\PageMenu())->getItems())>0):?>
             <div class="page-menu menu">
-                <div class="button">Page</div>
+                <div class="button"><span>Page</span></div>
                   <div class="list">
                 <?=(new \dokuwiki\Menu\PageMenu())->getListItems()?>
                 </div>
@@ -54,7 +54,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             <?php endif?>
             <?php if(sizeof((new \dokuwiki\Menu\SiteMenu())->getItems())>0):?>
             <div class="site-menu menu">
-                <div class="button">Site</div>
+                <div class="button"><span>Site</span></div>
                   <div class="list">
                   <?=(new \dokuwiki\Menu\SiteMenu())->getListItems()?>    
                 </div>
@@ -62,7 +62,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             <?php endif?>
             <?php if(sizeof((new \dokuwiki\Menu\UserMenu())->getItems())>0):?>
             <div class="user-menu menu">
-            <div class="button">User</div>
+            <div class="button"><span>User</span></div>
             <div class="list">
                 <?php if($USERINFO):?>
                 <div class="user-name"><?=$USERINFO['name']?></div>
@@ -111,7 +111,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </div>
     </navbar>
     
-    <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || page_exists(":header"))&& tpl_getConf('siteHeaderPosition')=='Top'):?>
+    <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || page_exists(":header")) && tpl_getConf('siteHeaderPosition')=='Top'):?>
     <div class="site-header">
     <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     <!-- ********** Notice ********** -->
@@ -124,7 +124,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         }
     ?>
 
-    <?php if($ACT!='login' && $ACT!='resendpwd' && $ACT !='register' && ($conf['youarehere'] || $conf['breadcrumbs'])):?>
+    <?php if($conf['youarehere'] || $conf['breadcrumbs']):?>
     
     <div class="site-navigation">
         <!-- BREADCRUMBS -->
@@ -152,7 +152,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
         <div id="view" class="right-column">
 
-                <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || page_exists(":header"))&& tpl_getConf('siteHeaderPosition')=='Above page'):?>
+                <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || page_exists(":header")) && tpl_getConf('siteHeaderPosition')=='Above page'):?>
                 <div class="site-header">
                 <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
                 <!-- ********** Notice ********** -->
@@ -165,7 +165,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                     }
                 ?>
 
-                <?php if($ACT!='login' && $ACT!='resendpwd' && $ACT !='register' && ($conf['youarehere'] || $conf['breadcrumbs'])):?>
+                <?php if($conf['youarehere'] || $conf['breadcrumbs']):?>
                 
                 <div class="site-navigation">
                     <!-- BREADCRUMBS -->

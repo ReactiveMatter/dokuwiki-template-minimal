@@ -12,3 +12,4 @@ $lang['__title_color__'] = 'The color of site title in navbar';
 $lang['__mobile_breakpoint__'] = 'Mobile breakpoint to switch to mobile view';
 $lang['__link__'] = 'The color of links';
 $lang['__theme_color__'] = 'The color of theme of Dokuwiki';
+$lang['__sidebox_width__'] = 'Width of the sidebox (wrap plugin required)';
