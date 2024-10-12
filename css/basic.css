@@ -616,7 +616,8 @@ navbar .right-column .options
 
 .page-info
 {
-    padding: 16px;
+    margin-top: 24px;
+    font-size: 0.9em;
 }
 
 
@@ -957,7 +958,34 @@ ul.actions, .dokuwiki .editBar .editButtons
      background-color: __background__;
 }
 
+.dokuwiki .editBar .summary
+{
+    margin-bottom: 16px;
+}
+
+.dokuwiki .editBar .summary input
+{
+    background: __background__;
+    border: 1px solid __border__;
+    padding: 0.2em 0.5em;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dokuwiki .editBar .summary input.missing
+{
+    background: none;
+    border-color: red;
+
+}
+
 pre.code 
 {
     padding: 0.5em 1em;
+}
+
+#dw__toc ul li div.li
+{
+    padding: 0.25em;
 }
