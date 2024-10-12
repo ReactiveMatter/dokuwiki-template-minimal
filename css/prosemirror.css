@@ -1,0 +1,13 @@
+.ProseMirror
+{
+    padding: 16px;
+}
+
+.prosemirror_wrapper .menubar.prosemirror-menubar-fixed
+
+{
+    position: sticky;
+    border: none;
+    border: 1px solid #ccc;
+    padding: 0px;
+}

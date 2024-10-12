@@ -19,13 +19,18 @@ div.wrap_box
     border-radius: 3px;
 }
 
-.wrap_box:only-child, .wrap_box>*:first-child
+.wrap_box>*:first-child
 {
     margin-top:0;
 }
-.wrap_box:only-child, .wrap_box>*:last-child
+.wrap_box>*:last-child
 {
     margin-bottom:0;
+}
+
+.site-header .wrap_box:only-child
+{
+    margin: 0px;
 }
 
 .wrap_box.wrap_white
