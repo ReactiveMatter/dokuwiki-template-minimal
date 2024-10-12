@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
 jQuery('#dw__toc>div').hide();
 jQuery('#dw__toc>div>ul').hide();
 jQuery('#dw__toc').css('display','block');
-})
+});
 
 
 jQuery("#showhidesidemenu").on("click", () => {
