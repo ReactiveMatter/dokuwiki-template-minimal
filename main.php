@@ -1,13 +1,15 @@
 <?php
 /**
- * DokuWiki Starter Template
+ * DokuWiki Minimal Template
  *
- * @link     http://dokuwiki.org/template:starter
- * @author   Anika Henke <anika@selfthinker.org>
+ * @link     http://dokuwiki.org/template:minimal
+ * @author   Reactive Matter <reactivematter@protonmail.com>
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
+
+@require_once(dirname(__FILE__).'/template_plugin.php'); /* include hook for template functions */
 
 $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && !empty($_SERVER['REMOTE_USER']) );
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
@@ -111,12 +113,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </div>
     </navbar>
     
-    <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || page_exists(":header")) && tpl_getConf('siteHeaderPosition')=='Top'):?>
+    <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists(":header") && auth_quickaclcheck(":header")) ) && tpl_getConf('siteHeaderPosition')=='Top'):?>
     <div class="site-header">
     <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     <!-- ********** Notice ********** -->
     <?php 
-        if(page_exists(":header"))
+        if(page_exists(":header") && auth_quickaclcheck(":header"))
         {
             echo '<div class="site-header-content">';
             tpl_include_page(':header');
@@ -152,12 +154,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
         <div id="view" class="right-column">
 
-                <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || page_exists(":header")) && tpl_getConf('siteHeaderPosition')=='Above page'):?>
+                <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists(":header") && auth_quickaclcheck(":header"))) && tpl_getConf('siteHeaderPosition')=='Above page'):?>
                 <div class="site-header">
                 <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
                 <!-- ********** Notice ********** -->
                 <?php 
-                    if(page_exists(":header"))
+                    if(page_exists(":header") && auth_quickaclcheck(":header"))
                     {
                         echo '<div class="site-header-content">';
                         tpl_include_page(':header');
@@ -196,7 +198,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
                  
         <?php 
-        if(page_exists(":footer") && tpl_getConf('siteFooterPosition')=='Below page')
+        if((page_exists(":footer") && auth_quickaclcheck(":footer")) && tpl_getConf('siteFooterPosition')=='Below page')
         {
             echo '<footer id="footer">';
             tpl_include_page(':footer');
@@ -208,7 +210,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
     </div>
     </div>
         <?php 
-    if(page_exists(":footer") && tpl_getConf('siteFooterPosition')=='Bottom')
+    if((page_exists(":footer") && auth_quickaclcheck(":footer")) && tpl_getConf('siteFooterPosition')=='Bottom')
     {
         echo '<footer id="footer">';
         tpl_include_page(':footer');
