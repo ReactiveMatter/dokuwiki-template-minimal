@@ -3,8 +3,8 @@ jQuery(document).on('click', function(e) {
         jQuery('.menu:not(.mobile-menu) .list').hide();
     }
 }); 
-jQuery('.menu').on('click', function(e) {
-    jQuery('.menu .list').not(jQuery(this).children('.list')).hide();
+jQuery('.menu:not(.mobile-menu)').on('click', function(e) {
+    jQuery('.menu:not(.mobile-menu) .list').not(jQuery(this).children('.list')).hide();
     jQuery(this).children('.list').slideToggle('fast');
 });
 
