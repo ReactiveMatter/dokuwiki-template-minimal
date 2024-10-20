@@ -37,7 +37,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <div class="left-column">
         <a class="site-name" href="<?=DOKU_BASE?>">
         <div class="site-logo">
-            <img src="<?=tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png', ':wiki:dokuwiki.svg'), false)?>">
+            <img src="<?=tpl_getMediaFile(array(':wiki:logo.png', ':wiki:logo.svg', ':wiki:logo.jpeg',':wiki:logo.jpg',  ':logo.png', ':logo.svg', ':logo.jpeg',':logo.jpg', 'images/logo.png', ':wiki:dokuwiki.svg'), false)?>">
         </div>
         <div class="site-title">
             <?=$conf['title']?>
