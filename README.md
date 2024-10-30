@@ -5,5 +5,5 @@ More at [https://www.dokuwiki.org/template:minimal](https://www.dokuwiki.org/tem
 
 **Under development:**
 - [ ] Tagline support
-- [x] Sticky TOC conf
+- [ ] Sticky TOC conf
 - [x] Themes functionality
