@@ -5,17 +5,32 @@
  * want to integrate this file into the other project as well, or use
  * the other project's basic CSS for DokuWiki instead of this one.
  *
- * @author Anika Henke <anika@selfthinker.org>
+ * @author Reactive Matter <reactivematter@protonmail.org>
+ * 
  */
 
 html {
     overflow-x: auto;
     overflow-y: scroll;
 }
-html,
+
+body 
+{
+    --background: __background__;
+    --background-alt: __background_alt__;
+    --text-color: __text__;
+    --site-width: __site_width__;
+    --text-color-alt: __text_neu__;
+    --sidebar-width: __sidebar_width__;
+    --link-color: __link__;
+    --link-color-existing: __existing__;
+    --link-color-missing: __missing__;
+    --border-color: __border__;
+}
+
 body {
-    background-color: __background__;
-    color: __text__;
+    background-color: var(--background);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -28,7 +43,7 @@ body {
 
 body:not(.full-width)
 {
-    max-width: __site_width__;
+    max-width: var(--site-width);
     margin: auto;
 }
 
@@ -36,6 +51,9 @@ body *
 {
     box-sizing: border-box;
 }
+
+
+
 
 .hide 
 {
@@ -51,7 +69,7 @@ h4,
 h5,
 h6 {
     font-weight: bold;
-    color: __text_neu__;
+    color: var(--text-color-alt);
     background-color: inherit;
     padding: 0;
     line-height: 1.2;
@@ -194,7 +212,7 @@ table {
     border-collapse: collapse;
     empty-cells: show;
     border-spacing: 0;
-    border: 1px solid __border__;
+    border: 1px solid var(--border-color);
 }
 
 caption {
@@ -210,7 +228,7 @@ td {
     padding: .3em .5em;
     margin: 0;
     vertical-align: top;
-    border: 1px solid __border__;
+    border: 1px solid var(--border-color);
 }
 th {
     font-weight: bold;
@@ -230,7 +248,7 @@ a {
 a:link,
 a:visited {
     text-decoration: none;
-    color: __link__;
+    color: var(--link-color);
 }
 
 a:visited:hover,
@@ -241,6 +259,11 @@ a:visited:active {
     text-decoration: none;
 }
 
+
+.dokuwiki a.wikilink2
+{
+    color: var(--link-color-missing);
+}
 
 a:hover
 {
@@ -321,13 +344,13 @@ kbd {
     font-family: Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
     /* same font stack should be used for ".dokuwiki table.diff td" in _diff.css */
     font-size: 1em;
-    background-color: __background_alt__;
-    color: __text__;
+    background-color: var(--background-alt);
+    color: var(--text-color);
     direction: ltr;
     text-align: left;
 }
 pre {
-    border: 1px solid __border__;
+    border: 1px solid var(--border-color);
     padding: 0 .2em;
     overflow: auto;
     word-wrap: normal;
@@ -335,7 +358,7 @@ pre {
 
 blockquote {
     padding: 0 .5em;
-    border: solid __border__;
+    border: solid var(--border-color);
     border-width: 0 0 0 .25em;
 }
 [dir=rtl] blockquote {
@@ -456,6 +479,7 @@ keygen:focus,
 textarea:focus {
     box-shadow: 0 0 5px #999;
     outline: 0;
+
 }
 input::-moz-focus-inner,
 button::-moz-focus-inner {
@@ -474,6 +498,167 @@ option {
     font-style: normal;
     font-weight: normal;
 }
+
+#config__manager tr .input, #config__manager tr input, #config__manager tr textarea, #config__manager tr select,#config__manager fieldset,
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault
+{
+    color: var(--text-color);
+}
+
+#config__manager tr .input, #config__manager tr input, #config__manager tr textarea, #config__manager tr select
+{
+    background-color: var(--background);
+}
+
+button:not(:last-child)
+{
+    margin-right: 16px;
+}
+
+.JSpopup
+{
+    background-color: var(--background) !important;
+    border-color: var(--border-color) !important;
+}
+
+
+/*____________ links to wiki pages (addition to _links) ____________*/
+
+/* existing wikipage */
+.dokuwiki a.wikilink1 {
+    color: var(--link-color-existing);
+    background-color: inherit;
+}
+/* not existing wikipage */
+.dokuwiki a.wikilink2 {
+    color: var(--link-color-missing);
+    background-color: inherit;
+}
+
+
+/*____________ images ____________*/
+
+/* embedded images (styles are already partly set in DokuWiki's lib/styles/all.css) */
+.dokuwiki img.media {
+    margin: .2em 0;
+}
+.dokuwiki img.medialeft {
+    margin: .2em 1.5em .2em 0;
+}
+.dokuwiki img.mediaright {
+    margin: .2em 0 .2em 1.5em;
+}
+.dokuwiki img.mediacenter {
+    margin: .2em auto;
+}
+
+
+/*____________ tables ____________*/
+
+/* div before each table */
+.dokuwiki div.table {
+}
+
+.dokuwiki table.inline {
+    min-width: 50%;
+}
+.dokuwiki table.inline tr:hover td {
+    background-color: var(--background-alt);
+}
+.dokuwiki table.inline tr:hover th {
+    background-color: var(--border-color);
+}
+
+
+/*____________ code ____________*/
+
+/* fix if background-color hides underlining */
+.dokuwiki em.u code {
+    text-decoration: underline;
+}
+
+/* filenames for downloadable file and code blocks */
+.dokuwiki dl.code,
+.dokuwiki dl.file {
+}
+
+.dokuwiki dl.code dt,
+.dokuwiki dl.file dt {
+    background-color: var(--background-alt);
+    border: solid var(--border-color);
+    border-width: 1px 1px 0;
+    color: inherit;
+    display: inline;
+    padding: .1em .5em .2em;
+    margin-left: 1em;
+}
+[dir=rtl] .dokuwiki dl.code dt,
+[dir=rtl] .dokuwiki dl.file dt {
+    margin-left: 0;
+    margin-right: 1em;
+}
+.dokuwiki dl.code dt a,
+.dokuwiki dl.file dt a {
+}
+
+.dokuwiki dl.code dd,
+.dokuwiki dl.file dd {
+    margin: 0;
+}
+
+/* for code in <file> */
+.dokuwiki pre.file,
+.dokuwiki dl.file pre,
+.dokuwiki dl.file dt {
+    border-color: var(--border-color);
+}
+
+
+/*____________ media manager ____________*/
+
+/* some headings in the media manager should not look like headings */
+#mediamanager__page h2,
+#mediamanager__page h3 {
+    font-family: Frutiger, Calibri, Myriad, "Nimbus Sans L", Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+}
+
+/* to style button-like div in _fileuploader.css to look like other buttons,
+   please add '.qq-upload-button' to the according styles (which don't really exist in this template) */
+.qq-upload-button {
+    border: 1px solid var(--border-color);
+    background-color: var(--background-alt);
+    padding: 0.125em 0.4em;
+}
+
+/*____________ styling plugin ____________*/
+
+#plugin__styling.ispopup {
+    padding: 1em;
+}
+
+
+/*____________ JS popup ____________*/
+
+.JSpopup {
+    background-color: var(--background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    line-height: 1.2;
+    padding: 0 .2em;
+}
+
+.JSpopup ul,
+.JSpopup ol {
+    padding-left: 0;
+}
+[dir=rtl] .JSpopup ul,
+[dir=rtl] .JSpopup ol {
+    padding-right: 0;
+}
+
+
+/* CSS starts */
 
 .hide 
 {
@@ -507,7 +692,7 @@ option {
 navbar 
 {
     display: flex;
-    border-bottom: 1px solid __border__;
+    border-bottom: 1px solid var(--border-color);
     line-height: 1;
 }
 
@@ -528,6 +713,7 @@ navbar .site-name .site-title
 {
     font-weight: bold;
     font-size: 1.2rem;
+    padding: 8px 0px;
 }
 
 navbar a.site-name, navbar a.site-name:hover 
@@ -559,9 +745,10 @@ navbar form.search input
     padding: 0.5em 1em;
     padding-right: 2em;
     width: 20rem;
-    border: 1px solid __border__;
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     box-sizing: border-box;
+    background-color: var(--background);
 }
 navbar form.search input:focus 
 {
@@ -625,13 +812,13 @@ navbar .right-column .options
 
 
 
-#view>*
+div#view>*
 {
     padding-left: 0px;
     padding-right: 0px;
 }
 
-#view, #sidebar 
+div#view, div#sidebar 
 {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -639,7 +826,7 @@ navbar .right-column .options
 
 .site-header 
 {
-    border-bottom: 1px solid __border__;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .site-header
@@ -687,7 +874,7 @@ navbar .right-column .options
 footer 
 {
     padding: 16px;
-    border-top: 1px solid __border__;
+    border-top: 1px solid var(--border-color);
 }
 
 #view>footer 
@@ -722,7 +909,7 @@ article#content h4
 
 h1, h2, h3, h4, h5, h6
 {
-    color: __text__;
+    color: var(--text-color);
 }
 
 .menu 
@@ -737,8 +924,8 @@ h1, h2, h3, h4, h5, h6
     display: none;
     position: absolute;
     right: 0px;
-    background-color: __background__;
-    border: 1px solid __border__;
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
     min-width: 200px;
     padding: 8px 0px;
     top: 44px;
@@ -760,7 +947,7 @@ h1, h2, h3, h4, h5, h6
     align-items: center;
     gap: 16px;
     text-decoration: none;
-    color: __text__ ;
+    color: var(--text-color) ;
     padding: 4px 16px ;
 }
 .menu .list li>a:hover
@@ -770,6 +957,11 @@ h1, h2, h3, h4, h5, h6
 .menu .list li>a svg 
 {
     fill: __text_alt__;
+}
+
+.menu .list li.top 
+{
+    display: none;
 }
 
 .menu .list .user-name 
@@ -789,7 +981,7 @@ h1, h2, h3, h4, h5, h6
 
 .menu .button:hover 
 {
-    color: __text__;
+    color: var(--text-color);
 }
 
 .user-menu .button::before {
@@ -878,15 +1070,15 @@ ul.actions, .dokuwiki .editBar .editButtons
     gap: 15px;
 }
 
-#sidebar 
+div#sidebar 
 {
-    width: __sidebar_width__;
-    border-right: 1px solid __border__;
+    width: var(--sidebar-width);
+    border-right: 1px solid var(--border-color);
     flex-shrink:0;
     flex-grow: 0;
 }
 
-#content
+article#content
 {
     position: relative;
 }
@@ -902,15 +1094,15 @@ ul.actions, .dokuwiki .editBar .editButtons
 
 #dw__toc>div
 {
-    background-color: __background__;
-    border: 1px solid __border__;
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     margin-top: 28px;
     width: 100%;
     padding: 0.5em 1em;
 }
 
-#content #dw__toc .toggle::before
+article#content #dw__toc .toggle::before
 {
     display: block;
     content: "";
@@ -925,9 +1117,11 @@ ul.actions, .dokuwiki .editBar .editButtons
     right: 0px;
 }
 
-#content #dw__toc .toggle
+article#content #dw__toc .toggle
 {
     height: 0px;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
 }
 
@@ -944,20 +1138,20 @@ ul.actions, .dokuwiki .editBar .editButtons
 
 #config__manager .value input, #config__manager .value select,  #config__manager .value textarea
 {
-    border: 1px solid __border__;
+    border: 1px solid var(--border-color);
     padding: 0.5em 1em;
 
 }
 #config__manager .value input:focus, #config__manager .value select:focus, #config__manager .value textarea:focus
 {
      border: 1px solid #00b7ff;
-     background-color: __background__;
+     background-color: var(--background);
      box-shadow: none;
 }
 
 .dokuwiki #config__manager table.inline tr:hover td
 {
-     background-color: __background__;
+     background-color: var(--background);
 }
 
 .dokuwiki .editBar .summary
@@ -967,8 +1161,8 @@ ul.actions, .dokuwiki .editBar .editButtons
 
 .dokuwiki .editBar .summary input
 {
-    background: __background__;
-    border: 1px solid __border__;
+    background: var(--background);
+    border: 1px solid var(--border-color);
     padding: 0.2em 0.5em;
     border-radius: 3px;
     margin-left: 10px;

@@ -28,8 +28,10 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
     <?php tpl_includeFile('meta.html') ?>
 </head>
 
-<body class="<?=tpl_classes()?><?=tpl_getConf('fullWidthSite')?' full-width':''?><?php
-        echo ($showSidebar) ? ' sidebar' : ''; ?>">
+<?php 
+
+?>
+<body class="<?=tpl_minimal_classes()?>">
 <navbar id="navbar" class="container" role="navigation" aria-label="Main navigation">
         <div id='showhidesidemenu' class="mobile icon">
             <div class="button"></div>
@@ -44,7 +46,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </div>
         </a>
         </div>
+        <?php if($showTools || actionOK('search')):?>
         <div class="right-column">
+        <?php if($showTools):?>
         <div class="options">
             <?php if(sizeof((new \dokuwiki\Menu\PageMenu())->getItems())>0):?>
             <div class="page-menu menu">
@@ -104,13 +108,17 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             ?>
             </div>
         </div>
+        <?php endif?>
+        <?php if(actionOK('search')):?>
         <div class="search">
             <?php tpl_searchform(true,false) ?>
         </div>
+        <?php endif?>
         </div>
         <div id='showhideappoptions' class="mobile icon">
             <div class="button"></div>
         </div>
+     <?php endif?>
     </navbar>
     
     <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists(":header") && auth_quickaclcheck(":header")) ) && tpl_getConf('siteHeaderPosition')=='Top'):?>
@@ -189,7 +197,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </article>
 
 
-        <?php if( tpl_getConf('showPageInfo') ):?>
+        <?php if(tpl_getConf('showPageInfo') ):?>
          <div class="page-info">
                 <?php tpl_pageinfo() /* 'Last modified' etc */ ?>
                     

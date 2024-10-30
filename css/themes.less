@@ -1,0 +1,212 @@
+/**
+ * This file provides the colour css for themes.
+ */
+
+
+body.theme-dark
+{
+    --background: #333;
+    --background-alt: #555;
+    --text-color: #eee;
+    --text-color-alt: #999;
+    --border-color: #666;
+    --link-color: #abccff;
+
+    navbar a.site-name, navbar a.site-name:hover
+    {
+        color: #eee;
+    }
+
+     *:not(.ui-dialog):not(.ui-dialog *)
+    {
+         a.wikilink2
+        {
+            color: #ff9a79;
+        }
+
+        a.wikilink1
+        {
+            color: #9dff9d;
+        }
+    }
+
+}
+
+
+body.theme-terminal
+{
+    --background: #111;
+    --background-alt: #050;
+    --text-color: #0c0;
+    --text-color-alt: #0a0;
+    --border-color: #070;
+    --link-color: #0c0;
+
+    font-family: Monospace, Sans-serif;
+
+    navbar a.site-name, navbar a.site-name:hover
+    {
+        color: #0c0;
+    }
+
+     *:not(.ui-dialog):not(.ui-dialog *)
+    {
+         a.wikilink2,  a.wikilink1
+        {
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
+
+/*Corrections which are common for all themes */
+
+
+body.theme-dark, body.theme-terminal
+{
+     navbar form.search button
+    {
+        filter: invert(100%);
+    }
+
+    /* For body elements not in navbar / footer */
+    *:not(.ui-dialog):not(.ui-dialog *)
+    {
+
+         input, input.edit
+        {
+            background-color: var(--background);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+
+    div.ui-admin ul li a span.icon svg>path
+    {
+        fill: var(--link-color);
+    }
+
+
+    .menu .list li > a:hover
+    {
+        background-color: var(--background-alt);
+    }
+
+    .menu .list li > a svg
+    {
+        fill: var(--text-color-alt)
+    }
+    .menu .button
+    {
+        color: var(--text-color-alt);
+    }
+
+    .menu .button::before, .mobile.icon .button::before 
+    {
+        background: var(--text-color-alt);
+    }
+
+    button:not(form.search button)
+    {
+        background: var(--background-alt);
+        color: var(--text-color);
+        border:  1px solid var(--border-color);
+        border-radius: 0.1em;
+    }
+
+    #extension__manager .panelHeader
+    {
+        background: var(--background-alt);
+        color: var(--text-color);
+    }
+
+    .tabs > ul li a,  ul.tabs li strong, ul.tabs li a,  .tabs > ul li a:hover,  .tabs > ul li a:active,  .tabs > ul li a:focus,  .tabs > ul li .curid a,  .tabs > ul .active a,  ul.tabs li a:hover,  ul.tabs li a:active,  ul.tabs li a:focus,  ul.tabs li.active a,  ul.tabs li strong
+    {
+        background: var(--background-alt);
+        color: var(--text-color);
+    }
+
+    #extension__manager ul.tabs li.active a, #extension__manager ul.tabs li:hover, 
+    {
+        background: var(--background-alt);
+        color: var(--text-color);
+        filter: brightness(125%);
+
+    }
+    
+    #mediamanager__page .panelHeader,  #mediamanager__page .file dl dt, #mediamanager__page .namespaces h2
+    {
+        background: var(--background-alt);
+        color: var(--text-color);
+    }
+
+    #mediamanager__page .file dl dd
+    {
+        background: var(--background);
+        color: var(--text-color);
+    }
+
+    #mediamanager__page .filelist .thumbs li, #mediamanager__page .filelist .rows li:nth-child(2n+1), #mediamanager__page .namespaces ul .selected
+    {
+         background: var(--background-alt);
+         color: var(--text-color);
+    }
+
+
+
+    .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
+    {
+        background: var(--background);
+        color: var(--text-color);
+    }
+
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover
+    {
+        background: var(--background-alt);
+        color: var(--text-color);
+    }
+
+    fieldset
+    {
+         border-color: var(--border-color);
+    }
+
+    .prosemirror_wrapper
+    {
+
+    .ProseMirror li p
+    {
+        color: var(--text-color) !important;
+    }
+
+    .menubar
+    {
+        background: var(--background-alt);
+    }
+
+    .menubar .menuitem .menuicon svg
+    {
+         fill: var(--text-color);
+    }
+
+    .menubar .menuitem.is-disabled  .menuicon svg
+    {
+         fill: var(--text-color-alt);
+    }
+
+    .menubar .dropdown_content
+    {
+        background: var(--background-alt);
+    }
+
+    .menubar .menulabel
+    {
+        color: var(--text-color);
+    }
+    }
+
+}
+
+}

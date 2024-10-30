@@ -9,3 +9,19 @@
 
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
+
+function tpl_minimal_classes()
+{
+	$theme = '';
+	if(tpl_getConf('theme')!='Default')
+	{
+	    $theme = ' theme-'.strtolower(tpl_getConf('theme'));
+	}
+
+	$width = tpl_getConf('fullWidthSite')?' full-width':'';
+
+	$sidebar = (page_findnearest($conf['sidebar']) && ($ACT=='show')) ? ' sidebar' : '';
+
+	return tpl_classes().$width.$sidebar.$theme;
+}
+
