@@ -510,11 +510,6 @@ option {
     background-color: var(--background);
 }
 
-button:not(:last-child)
-{
-    margin-right: 16px;
-}
-
 .JSpopup
 {
     background-color: var(--background) !important;
