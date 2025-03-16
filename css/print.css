@@ -155,7 +155,7 @@ th {
 }
 
 
-navbar, .site-header, footer, .page-info
+navbar, .site-header, footer, .page-info, .sidebar
 {
     display: none;
 }
