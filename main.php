@@ -32,6 +32,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
 ?>
 <body class="<?=tpl_minimal_classes()?>">
+<div id="dokuwiki__top"></div>
 <navbar id="navbar" class="container" role="navigation" aria-label="Main navigation">
         <div id='showhidesidemenu' class="mobile icon">
             <div class="button"></div>
