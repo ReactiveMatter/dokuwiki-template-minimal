@@ -22,10 +22,10 @@ function tpl_minimal_classes()
 	    $theme = ' theme-'.strtolower(tpl_getConf('theme'));
 	}
 
-	$width = tpl_getConf('stickyToc')?' stoc':'';
+	$toc = tpl_getConf('stickyToc')?' stoc':'';
 	$width = tpl_getConf('fullWidthSite')?' full-width':'';
 	$sidebar = (page_findnearest($conf['sidebar']) && ($ACT=='show')) ? ' sidebar' : '';
-	return tpl_classes().$width.$sidebar.$theme;
+	return tpl_classes().$toc.$width.$sidebar.$theme;
 }
 
 
