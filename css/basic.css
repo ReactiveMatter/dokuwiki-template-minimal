@@ -1097,6 +1097,11 @@ article#content
     padding: 0.5em 1em;
 }
 
+.dokuwiki.stoc #dw__toc>div
+{
+    position: absolute;
+}
+
 article#content #dw__toc .toggle::before
 {
     display: block;
