@@ -1100,6 +1100,8 @@ article#content
 .dokuwiki.stoc #dw__toc>div
 {
     position: absolute;
+    overflow: scroll;
+    max-height: calc(100vh - 100px);
 }
 
 article#content #dw__toc .toggle::before
