@@ -34,7 +34,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 <body class="<?=tpl_minimal_classes()?>">
 <div id="dokuwiki__top"></div>
 <navbar id="navbar" class="container" role="navigation" aria-label="Main navigation">
-        <div id='showhidesidemenu' class="mobile icon">
+        <?php 
+        if(!$showSidebar){$s1 = "style=visibility:hidden";}
+        else {$s1="";}
+        ?>
+        <div id='showhidesidemenu' class="mobile icon" <?=$s1?>>
             <div class="button"></div>
         </div>
         <div class="left-column">
@@ -116,7 +120,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </div>
         <?php endif?>
         </div>
-        <div id='showhideappoptions' class="mobile icon">
+        <?php 
+        if(!$showTools){$s2 = "style=visibility:hidden";}
+        else {$s2="";}
+        ?>
+        <div id='showhideappoptions' class="mobile icon" <?=$s2?>>
             <div class="button"></div>
         </div>
      <?php endif?>
