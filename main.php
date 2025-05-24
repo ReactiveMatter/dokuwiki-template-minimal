@@ -130,15 +130,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
      <?php endif?>
     </navbar>
     
-    <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists(":header") && auth_quickaclcheck(":header")) ) && tpl_getConf('siteHeaderPosition')=='Top'):?>
+    <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists("header") && auth_quickaclcheck("header")) ) && tpl_getConf('siteHeaderPosition')=='Top'):?>
     <div class="site-header">
     <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
     <!-- ********** Notice ********** -->
     <?php 
-        if(page_exists(":header") && auth_quickaclcheck(":header"))
+        if(page_exists("header") && auth_quickaclcheck("header"))
         {
             echo '<div class="site-header-content">';
-            tpl_include_page(':header');
+            tpl_include_page('header');
             echo '</div>';
         }
     ?>
@@ -171,15 +171,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
         <div id="view" class="right-column">
 
-                <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists(":header") && auth_quickaclcheck(":header"))) && tpl_getConf('siteHeaderPosition')=='Above page'):?>
+                <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists("header") && auth_quickaclcheck("header"))) && tpl_getConf('siteHeaderPosition')=='Above page'):?>
                 <div class="site-header">
                 <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
                 <!-- ********** Notice ********** -->
                 <?php 
-                    if(page_exists(":header") && auth_quickaclcheck(":header"))
+                    if(page_exists("header") && auth_quickaclcheck("header"))
                     {
                         echo '<div class="site-header-content">';
-                        tpl_include_page(':header');
+                        tpl_include_page('header');
                         echo '</div>';
                     }
                 ?>
@@ -215,10 +215,10 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
                  
         <?php 
-        if((page_exists(":footer") && auth_quickaclcheck(":footer")) && tpl_getConf('siteFooterPosition')=='Below page')
+        if((page_exists("footer") && auth_quickaclcheck("footer")) && tpl_getConf('siteFooterPosition')=='Below page')
         {
             echo '<footer id="footer">';
-            tpl_include_page(':footer');
+            tpl_include_page('footer');
             echo '</footer>';
         }
         ?>
@@ -227,10 +227,10 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
     </div>
     </div>
         <?php 
-    if((page_exists(":footer") && auth_quickaclcheck(":footer")) && tpl_getConf('siteFooterPosition')=='Bottom')
+    if((page_exists("footer") && auth_quickaclcheck("footer")) && tpl_getConf('siteFooterPosition')=='Bottom')
     {
         echo '<footer id="footer">';
-        tpl_include_page(':footer');
+        tpl_include_page('footer');
         echo '</footer>';
     }
     ?>
