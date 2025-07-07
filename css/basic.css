@@ -1105,7 +1105,7 @@ article#content
 {
     position: absolute;
     overflow: scroll;
-    max-height: calc(100vh - 100px);
+    max-height: calc(500px);
 }
 
 article#content #dw__toc .toggle::before
