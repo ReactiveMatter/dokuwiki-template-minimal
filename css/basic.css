@@ -1109,6 +1109,17 @@ article#content
     height: 100vh;
 }
 
+@media (max-height: 600px) {
+  /* Styles for short screens */
+  .dokuwiki.stoc #dw__toc>div
+    {
+        position: absolute;
+        overflow: scroll;
+        max-height: calc(400px);
+        height: 100vh;
+    }
+}
+
 article#content #dw__toc .toggle::before
 {
     display: block;
