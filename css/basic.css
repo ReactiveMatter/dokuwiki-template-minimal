@@ -1106,6 +1106,7 @@ article#content
     position: absolute;
     overflow: scroll;
     max-height: calc(500px);
+    height: 100vh;
 }
 
 article#content #dw__toc .toggle::before
