@@ -1,7 +1,7 @@
 base     minimal
 author   Reactive Matter
 email    reactivematter@protonmail.com
-date     2025-05-24
+date     2025-07-07
 name     Minimal
 desc     A minimial template to quick start a Dokuwiki
 url      https://www.dokuwiki.org/template:minimal

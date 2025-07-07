@@ -348,12 +348,16 @@ kbd {
     color: var(--text-color);
     direction: ltr;
     text-align: left;
+    text-wrap: wrap;
+    word-wrap: break-word;
 }
 pre {
     border: 1px solid var(--border-color);
     padding: 0 .2em;
     overflow: auto;
     word-wrap: normal;
+    text-wrap: wrap;
+    word-wrap: break-word;
 }
 
 blockquote {
