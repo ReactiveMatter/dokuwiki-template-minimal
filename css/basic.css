@@ -1105,8 +1105,6 @@ article#content
 {
     position: absolute;
     overflow: scroll;
-    max-height: calc(500px);
-    height: 100vh;
 }
 
 @media (max-height: 600px) {
