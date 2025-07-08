@@ -21,42 +21,15 @@ jQuery('.menu:not(.mobile-menu)').on('click', function(e) {
 });
 
 
-
 jQuery("#showhidesidemenu").on("click", () => {
-
-    if(jQuery("#sidebar").css("display") == "none")
-    {
-        jQuery("#navbar .right-column").css("display","none");
-        jQuery("#sidebar").css("display","flex");
-        jQuery("#view, .site-header, #footer").css("display","none");
-    }
-    else
-    {
-        jQuery("#navbar .right-column").css("display","none");
-        jQuery("#sidebar").css("display","none");
-        jQuery("#view, .site-header, #footer").css("display","flex");
-    }
-
-
-    
+    jQuery("body").toggleClass("show-sidebar");
+    jQuery("body").removeClass("show-appoptions");
 });
 
 jQuery("#showhideappoptions").on("click", () => {
-    
-
-    if(jQuery("#navbar .right-column").css("display") == "none")
-    {
-        jQuery("#navbar .right-column").css("display","flex");
-        jQuery("#sidebar").css("display","none");
-        jQuery("#view, .site-header, #footer").css("display","none");
-    }
-    else
-    {
-        jQuery("#navbar .right-column").css("display","none");
-        jQuery("#sidebar").css("display","none");
-        jQuery("#view, .site-header, #footer").css("display","flex");
-    }
-    
+    jQuery("body").toggleClass("show-appoptions");
+    jQuery("body").removeClass("show-sidebar");
 });
+
 
 });

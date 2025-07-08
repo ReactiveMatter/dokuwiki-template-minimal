@@ -117,4 +117,24 @@
         margin-right: 0px;
      }
 
+      body.show-sidebar #navbar .right-column, body.show-sidebar #view, body.show-sidebar .site-header, body.show-sidebar #footer
+     {
+        display: none;
+     }
+
+     body.show-sidebar #sidebar
+     {
+        display: flex;
+     }
+
+     body.show-appoptions #sidebar , body.show-appoptions #view, body.show-appoptions .site-header, body.show-appoptions #footer
+     {
+        display: none;
+     }
+
+     body.show-appoptions #navbar .right-column
+     {
+        display: flex;
+     }
+
 }
