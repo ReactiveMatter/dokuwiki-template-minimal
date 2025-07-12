@@ -1198,3 +1198,18 @@ pre.code
     position: sticky;
     top: 10px;
 }
+
+
+/* Admin - Configuration Manager - sticky buttons Save, Reset */
+#config__manager #dw__configform p:last-child {
+    position: sticky;
+    bottom: 0;
+    box-sizing: border-box;
+    background-color: var(--background);
+    border: var(--border-color) solid 1px;
+    border-radius: 3px;
+    padding: .5em;
+    z-index: 9;
+    width: 100%
+}
+#config__manager #dw__configform p:last-child button {margin: .2em;}
