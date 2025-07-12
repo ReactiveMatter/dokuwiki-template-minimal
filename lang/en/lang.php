@@ -13,3 +13,6 @@ $lang['__mobile_breakpoint__'] = 'Mobile breakpoint to switch to mobile view';
 $lang['__link__'] = 'The color of links';
 $lang['__theme_color__'] = 'The color of theme of Dokuwiki. Some of the configuration of Template Style Settings will be overrided on non-default theme';
 $lang['__sidebox_width__'] = 'Width of the sidebox (wrap plugin required)';
+$lang['page']= 'Page';
+$lang['site']= 'Site';
+$lang['user']= 'User';
