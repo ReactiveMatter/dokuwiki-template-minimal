@@ -16,3 +16,4 @@ $lang['__sidebox_width__'] = 'Width of the sidebox (wrap plugin required)';
 $lang['page']= 'Page';
 $lang['site']= 'Site';
 $lang['user']= 'User';
+$lang['tools'] = 'tools';

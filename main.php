@@ -87,21 +87,21 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
             if(sizeof((new \dokuwiki\Menu\PageMenu())->getItems())>0)
                 {
-                    echo '<div class="list"><p>'.tpl_getLang('page').' tools</p>'.
+                    echo '<div class="list"><p>'.tpl_getLang('page').' '.tpl_getLang('tools').'</p>'.
                     (new \dokuwiki\Menu\PageMenu())->getListItems()
                     .'</div>';
                 }
   
                if(sizeof((new \dokuwiki\Menu\SiteMenu())->getItems())>0)
                {
-                    echo '<div class="list"><p>'.tpl_getLang('site').' tools</p>'.
+                    echo '<div class="list"><p>'.tpl_getLang('site').' '.tpl_getLang('tools').'</p>'.
                     (new \dokuwiki\Menu\SiteMenu())->getListItems()
                     .'</div>';
                }
 
                if(sizeof((new \dokuwiki\Menu\UserMenu())->getItems())>0)
                {
-                   echo '<div class="list"><p>'.tpl_getLang('user').' tools</p>'.
+                   echo '<div class="list"><p>'.tpl_getLang('user').' '.tpl_getLang('tools').'</p>'.
                    (new \dokuwiki\Menu\UserMenu())->getListItems()
                    .'</div>';
                }
