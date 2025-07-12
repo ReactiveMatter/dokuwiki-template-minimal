@@ -1,0 +1,1 @@
+Pokud chcete změnit favicon, jednoduše nahrajte soubor „favicon.ico“ do „wiki“ nebo kořenového jmenného prostoru pomocí Správce médií a bude automaticky použit. Pokud používáte uzavřenou wiki, doporučuje se v nastavení ACL zpřístupnit jmenný prostor „wiki“ (nebo kořenový) nebo jej zpřístupnit čtení, jinak se favicon nezobrazí nepřihlášeným uživatelům.

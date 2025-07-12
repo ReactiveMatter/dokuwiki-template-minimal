@@ -31,5 +31,4 @@ jQuery("#showhideappoptions").on("click", () => {
     jQuery("body").removeClass("show-sidebar");
 });
 
-
 });
