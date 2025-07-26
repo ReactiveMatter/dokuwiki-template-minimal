@@ -47,7 +47,6 @@
     }
 
     #navbar .right-column {
-        background: rgb(255, 255, 255);
         position: absolute;
         flex-direction: column-reverse;
         right: 0px;
