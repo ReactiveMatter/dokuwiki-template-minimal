@@ -158,7 +158,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
     </div>
     <?php endif?>
 
-<div id="main">
+<main id="main">
         
         <?php if ($showSidebar): ?>
             <div id="sidebar" class="left-column" aria-label="<?php echo $lang['sidebar'] ?>">
@@ -225,7 +225,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <!-- /footer -->
         <div style="display: none;"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     </div>
-    </div>
+    </main>
         <?php 
     if((page_exists("footer") && auth_quickaclcheck("footer")) && tpl_getConf('siteFooterPosition')=='Bottom')
     {
