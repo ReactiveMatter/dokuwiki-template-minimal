@@ -1089,6 +1089,7 @@ article#content
     position: absolute;
     right: 0px;
     width: 15em;
+    z-index: 1000;
 }
 
 #dw__toc>div
