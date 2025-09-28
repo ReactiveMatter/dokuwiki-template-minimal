@@ -925,7 +925,7 @@ h1, h2, h3, h4, h5, h6
     right: 0px;
     background-color: var(--background);
     border: 1px solid var(--border-color);
-    min-width: 200px;
+    min-width: 210px;
     padding: 8px 0px;
     top: 44px;
     z-index: 20000;
