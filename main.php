@@ -129,15 +129,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </div>
      <?php endif?>
     </navbar>
-    
-    <div class="site-header">
 
-      <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
-    
+    <div style="margin-top: 8px;">
+    <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
+    </div>
     <!-- ********** Notice ********** -->
         
     <?php if(($conf['youarehere'] || $conf['breadcrumbs'] || (page_exists("header") && auth_quickaclcheck("header")) ) && tpl_getConf('siteHeaderPosition')=='Top'):?>
 
+    <div class="site-header">
   
     <?php 
         if(page_exists("header") && auth_quickaclcheck("header"))
@@ -160,9 +160,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <?php } ?>
     </div>
     <?php endif?>
+
+    </div>
+
     <?php endif?>
 
-</div>
 
 
 <main id="main">
