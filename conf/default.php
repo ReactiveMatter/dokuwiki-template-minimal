@@ -12,3 +12,4 @@ $conf['siteFooterPosition'] = 'Bottom';
 $conf['showPageInfo'] = 1;
 $conf['theme'] = 'Default';
 $conf['hideTools'] = 0;
+$conf['showEditButton'] = 0;

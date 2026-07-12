@@ -11,4 +11,5 @@ $meta['siteFooterPosition'] = array('multichoice','_choices' => array('Bottom','
 $meta['showToc']     	  = array('onoff');
 $meta['stickyToc']     	  = array('onoff');
 $meta['hideTools']     	  = array('onoff');
+$meta['showEditButton']   = array('onoff');
 $meta['theme'] = array('multichoice','_choices' => array('Default','Dark','Terminal'));
