@@ -243,5 +243,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         echo '</footer>';
     }
     ?>
+<div id="top-button" onclick="goToTop()"><img src="<?= tpl_basedir() ?>images/up-arrow.svg"></div>
 </body>
 </html>

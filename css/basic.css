@@ -1214,3 +1214,35 @@ pre.code
     width: 100%
 }
 #config__manager #dw__configform p:last-child button {margin: .2em;}
+
+#top-button
+{
+    border: 1px solid #ccc;
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin: 12px;
+    background: white;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+}
+
+#top-button.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#top-button img
+{
+   width: 24px;
+   height: 24px;
+   opacity: 0.3;
+}
+
+

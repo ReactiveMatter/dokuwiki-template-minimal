@@ -31,4 +31,31 @@ jQuery("#showhideappoptions").on("click", () => {
     jQuery("body").removeClass("show-sidebar");
 });
 
+const topButton = document.getElementById("top-button");
+let hideTimer;
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY <= 200) {
+        topButton.classList.remove("visible");
+        clearTimeout(hideTimer);
+        return;
+    }
+
+    // Show button immediately
+    topButton.classList.add("visible");
+
+    // Reset the hide timer
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+        topButton.classList.remove("visible");
+    }, 5000);
 });
+
+});
+
+
+function goToTop() {
+    window.scrollTo({
+        top: 0
+    });
+}
