@@ -56,6 +56,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <?php if($showTools):?>
         <div class="options">
             <?php if(sizeof((new \dokuwiki\Menu\PageMenu())->getItems())>0):?>
+            
+            <?php if(tpl_getConf('showEditButton') && actionOK('search')) :?>
+
+            <div class="edit-button menu"  title="Edit this page"><?=(new \dokuwiki\Menu\PageMenu())->getListItems()?></div>
+
+            <?php endif ?>
             <div class="page-menu menu">
                 <div class="button"><span><?=tpl_getLang('page')?></span></div>
                   <div class="list">
@@ -243,6 +249,6 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         echo '</footer>';
     }
     ?>
-<div id="top-button" onclick="goToTop()"><img src="<?= tpl_basedir() ?>images/up-arrow.svg"></div>
+<div id="top-button" onclick="goToTop()" title="Go to top"><img src="<?= tpl_basedir() ?>images/up-arrow.svg"></div>
 </body>
 </html>

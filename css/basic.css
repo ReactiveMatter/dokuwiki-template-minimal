@@ -953,7 +953,7 @@ h1, h2, h3, h4, h5, h6
 {
     background-color: __background_alt__;
 }
-.menu .list li>a svg 
+.menu .list li>a svg, .edit-button.menu svg
 {
     fill: __text_alt__;
 }
@@ -1246,3 +1246,58 @@ pre.code
 }
 
 
+.edit-button.menu li 
+{
+    display: none;
+    color: #777;
+    margin: 0px;
+}
+
+.edit-button.menu svg
+{
+    height: 1.2em;
+    width: 1.2em;
+    opacity: 0.9;
+}
+
+.edit-button.menu .edit, .edit-button.menu .create, .edit-button.menu .show 
+{
+    display: flex;
+}
+
+.edit-button.menu span
+{
+    display: none;
+}
+
+.edit-button.menu .edit a::after 
+{
+    content: "Edit";
+}
+.edit-button.menu .create a::after 
+{
+    content: "Create";
+}
+.edit-button.menu .show a::after 
+{
+    content: "View";
+}
+
+.edit-button.menu a
+{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #777;
+}
+
+.edit-button.menu a:hover
+{
+    color: var(--text-color)
+}
+
+.edit-button.menu a:hover svg 
+{
+    opacity: 1;
+}
