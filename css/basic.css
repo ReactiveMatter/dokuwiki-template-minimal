@@ -1260,7 +1260,7 @@ pre.code
     opacity: 0.9;
 }
 
-.edit-button.menu .edit, .edit-button.menu .create, .edit-button.menu .show 
+.edit-button.menu .edit, .edit-button.menu .create, .edit-button.menu .show, .edit-button.menu .draft
 {
     display: flex;
 }
@@ -1270,7 +1270,7 @@ pre.code
     display: none;
 }
 
-.edit-button.menu .edit a::after 
+.edit-button.menu .edit a::after, .edit-button.menu .draft a::after 
 {
     content: "Edit";
 }
@@ -1278,7 +1278,7 @@ pre.code
 {
     content: "Create";
 }
-.edit-button.menu .show a::after 
+.edit-button.menu .show a::after
 {
     content: "View";
 }
