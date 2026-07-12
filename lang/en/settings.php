@@ -12,3 +12,4 @@ $lang['siteHeaderPosition'] = "Position of the site header which contains :heade
 $lang['siteFooterPosition'] = "Position of the site footer. 'Bottom' positions it at the end. 'After page' positions it after the page";
 $lang['theme'] = "Theme for the minimal template";
 $lang['hideTools'] = "Hide tools for guest users (non-logged in users)";
+$lang['showEditButton'] = "Show edit button seperately (in desktop view)";
